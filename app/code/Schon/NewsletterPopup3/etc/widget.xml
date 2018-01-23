@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="schon_newsletter_popup3" class="Schon\NewsletterPopup3\Block\Widget\Popup">
+        <label translate="true">Schon Newsletter popup 3</label>
+        <description>Schon Newsletter popup</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" required="false" visible="true">
+                <label translate="true">Title</label>
+            </parameter>
+            <parameter name="desc" xsi:type="text" required="false" visible="true">
+                <label translate="true">Desc</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>
