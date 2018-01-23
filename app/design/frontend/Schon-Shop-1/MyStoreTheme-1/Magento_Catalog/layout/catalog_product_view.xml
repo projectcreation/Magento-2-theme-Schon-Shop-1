@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <!--<body>
+        <referenceContainer name="content">
+
+        </referenceContainer>
+    </body>-->
+
+
+
+    <container name="schon.product-view.container"  label="Schon profuct view Container" htmlTag="div" htmlClass="schon-row row" />
+    <move element="schon.product-view.container" destination="main" />
+
+
+
+
+    <referenceContainer name="product.info.media" htmlClass="product media col-md-6" />
+    <referenceContainer name="product.info.main"  htmlClass="product-info-main col-md-6" />
+    <!--<move element="product.info.main" destination="schon.product-view.container" />-->
+    <move element="product.info.media" destination="content" before="product.info.main" />
+
+
+
+    <referenceContainer name="skip_gallery_before.wrapper" remove="true" />
+    <referenceContainer name="skip_gallery_after.wrapper" remove="true" />
+
+
+    <move element="page.main.title" destination="product.info.main" before="product.info.price" />
+    <move element="breadcrumbs" destination="product.info.main" before="-" />
+    <move element="product.info.overview" destination="product.info.main" before="product.info.price" />
+    <referenceBlock name="product.info.mailto" remove="true" />
+    <move element="product.info.social" destination="product.info.main" after="page.main.title" />
+
+
+    <referenceBlock name="catalog.product.related" >
+        <!--<arguments>
+            <argument name="css_class" xsi:type="string">col-lg-12</argument>
+        </arguments>-->
+
+        <!--<action method="setItemLimit">
+            <argument name="type" xsi:type="string">related</argument>
+            <argument name="limit" xsi:type="string">5</argument>
+        </action>-->
+    </referenceBlock>
+    <move element="catalog.product.related" destination="content" />
+
+
+
+
+    <!--<block class="Magento\Catalog\Block\Product\ProductList\Related" name="catalog.product.related" template="Magento_Catalog::product/list/items.phtml" />-->
+
+</page>

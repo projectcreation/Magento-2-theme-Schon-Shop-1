@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+        <referenceContainer name="page.top">
+            <!--<referenceBlock  name="navigation.sections" remove="true" />-->
+        </referenceContainer>
+
+
+        <!--Header-->
+        <referenceBlock name="header" remove="true" />
+
+        <referenceBlock name="catalog.compare.link" remove="true" />
+
+        <referenceContainer name="header.container">
+            <referenceBlock name="skip_to_content" remove="true" />
+        </referenceContainer>
+
+        <referenceContainer name="header.container">
+            <referenceContainer name="header-wrapper" >
+                <referenceBlock  name="logo" remove="true" />
+            </referenceContainer>
+        </referenceContainer>
+
+        <referenceContainer name="header.container">
+            <container name="schon.header.container" as="schon-header-c" label="Schon header Container" htmlTag="div">
+                <block class="Magento\Framework\View\Element\Template"
+                       name="custom.header" template="Magento_Theme::phtml/header/custom-header.phtml" />
+            </container>
+        </referenceContainer>
+
+        <!--<move element="copyright" destination="schon.header.container" />-->
+
+        <!--<move element="minicart" destination="schon.header.container" />-->
+
+        <!--<move element="top.search" destination="schon.header.container" />-->
+
+        <!--<referenceBlock name="minicart" remove="true" />-->
+        <!--<referenceBlock name="top.search" remove="true" />-->
+
+        <referenceContainer name="header-wrapper">
+            <!--<referenceBlock name="top.search" remove="true" />-->
+            <!--<referenceBlock name="minicart" remove="true" />-->
+        </referenceContainer>
+
+
+        <move element="navigation.sections" destination="custom.header" />
+
+        <move element="top.search" destination="custom.header" />
+        <move element="minicart" destination="custom.header" />
+        <move element="wish-list-link" destination="custom.header" />
+        <move element="authorization-link" destination="custom.header" />
+
+
+
+
+        <referenceBlock name="my-account-link" remove="true" />
+
+        <referenceBlock name="register-link" remove="true" />
+
+
+
+
+
+
+
+
+        <referenceContainer name="header-wrapper">
+            <referenceBlock name="minicart">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="types" xsi:type="array"/>
+                        <item name="components" xsi:type="array">
+                            <item name="minicart_content" xsi:type="array">
+                                <!--<item name="component" xsi:type="string">Magento_Checkout/web/js/view/minicart</item>
+                                <item name="config" xsi:type="array">
+                                    <item name="template" xsi:type="string">Magento_Checkout/web/template/minicart/content</item>
+                                </item>-->
+
+                                <!--app/design/frontend/Schon-Shop-1/MyStoreTheme-1/Magento_Checkout/web/template/minicart/content.html-->
+                                <!--<item name="children" xsi:type="array">
+                                    <item name="subtotal.container" xsi:type="array">
+                                        <item name="component" xsi:type="string">uiComponent</item>
+                                        <item name="config" xsi:type="array">
+                                            <item name="displayArea" xsi:type="string">subtotalContainer</item>
+                                        </item>
+                                        <item name="children" xsi:type="array">
+                                            <item name="subtotal" xsi:type="array">
+                                                <item name="component" xsi:type="string">uiComponent</item>
+                                                <item name="config" xsi:type="array">
+                                                    <item name="template" xsi:type="string">Magento_Checkout/minicart/subtotal</item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                    <item name="extra_info" xsi:type="array">
+                                        <item name="component" xsi:type="string">uiComponent</item>
+                                        <item name="config" xsi:type="array">
+                                            <item name="displayArea" xsi:type="string">extraInfo</item>
+                                        </item>
+                                    </item>
+                                    <item name="promotion" xsi:type="array">
+                                        <item name="component" xsi:type="string">uiComponent</item>
+                                        <item name="config" xsi:type="array">
+                                            <item name="displayArea" xsi:type="string">promotion</item>
+                                        </item>
+                                    </item>
+                                </item>-->
+
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+
+            </referenceBlock>
+        </referenceContainer>
+
+
+
+
+        <!--Header-->
+
+
+        <!--Sidebar-->
+        <referenceContainer name="sidebar.additional">
+            <referenceBlock name="catalog.compare.sidebar" remove="true" />
+            <referenceBlock name="wishlist_sidebar" remove="true" />
+        </referenceContainer>
+
+        <referenceContainer name="sidebar.additional">
+            <block class="Magento\CatalogSearch\Block\Advanced\Form" name="catalogsearch_advanced_form" template="Magento_Catalog_Search::advanced/form.phtml"/>
+        </referenceContainer>
+
+        <!--<move element="catalog.leftnav" destination="sidebar.additional" />-->
+        <!--Sidebar-->
+
+
+        <!--Footer-->
+        <referenceBlock name="footer_links" remove="true" />
+
+        <referenceBlock name="authentication-popup" remove="true"/>
+
+        <referenceContainer name="footer">
+            <referenceBlock name="form.subscribe" remove="true" />
+            <referenceBlock name="copyright" remove="true" />
+            <referenceBlock name="report.bugs" remove="true" />
+
+
+            <!--<block class="Magento\Framework\View\Element\Template"-->
+                   <!--name="custom.footer" template="Magento_Theme::phtml/footer/custom-footer.phtml" />-->
+
+            <container name="schon.footer-1.container" label="Schon Footer 1 Container" htmlTag="footer" htmlClass="footer-1">
+                <container name="schon.footer-1-main.container" label="Schon Footer 1 main Container" htmlTag="section" htmlClass="footer-1-main">
+                    <container name="schon.footer-1-container.container" label="Schon Footer 1 Container Container" htmlTag="div" htmlClass="container">
+                        <container name="schon.footer-1-row.container" label="Schon Footer 1 Row Container" htmlTag="div" htmlClass="row">
+                            <container name="schon.footer.blok-1.container"  label="Schon Footer Block 1 Container" htmlTag="div" htmlClass="col-md-3 col-sm-6">
+                                <block class="Magento\Framework\View\Element\Template"
+                                       name="schon.footer.blok-1"
+                                       template="Magento_Theme::phtml/footer/block-1.phtml" />
+                            </container>
+                            <container name="schon.footer.blok-2.container"  label="Schon Footer Block 2 Container" htmlTag="div" htmlClass="col-md-3 col-sm-6 text-left">
+                                <block class="Magento\Framework\View\Element\Template"
+                                       name="schon.footer.blok-2"
+                                       template="Magento_Theme::phtml/footer/block-2.phtml" />
+                            </container>
+                            <container name="schon.footer.blok-3.container"  label="Schon Footer Block 3 Container" htmlTag="div" htmlClass="col-md-3 col-sm-6">
+                                <block class="Magento\Framework\View\Element\Template"
+                                       name="schon.footer.blok-3"
+                                       template="Magento_Theme::phtml/footer/block-3.phtml" />
+                            </container>
+                            <container name="schon.footer.blok-4.container"  label="Schon Footer Block 4 Container" htmlTag="div" htmlClass="col-md-3 col-sm-6 text-right">
+                                <block class="Magento\Framework\View\Element\Template"
+                                       name="schon.footer.blok-4"
+                                       template="Magento_Theme::phtml/footer/block-4.phtml" />
+                            </container>
+                        </container>
+                    </container>
+                </container>
+                <container name="schon.footer-bottom-1.container" label="Schon Footer Bottom 1 Container" htmlTag="section" htmlClass="footer-bottom-1">
+                    <container name="schon.footer-bottom-1-container.container" label="Schon Bottom 1 Container Container" htmlTag="div" htmlClass="container">
+                        <container name="schon.footer-bottom-1-row.container" label="Schon Bottom 1 Row Container" htmlTag="div" htmlClass="row">
+                            <block class="Magento\Framework\View\Element\Template"
+                                   name="schon.footer.blok-5"
+                                   template="Magento_Theme::phtml/footer/block-5.phtml" />
+                            <block class="Magento\Framework\View\Element\Template"
+                                   name="schon.footer.blok-6"
+                                   template="Magento_Theme::phtml/footer/block-6.phtml" />
+                        </container>
+                    </container>
+                </container>
+            </container>
+
+
+
+
+        </referenceContainer>
+
+
+        <referenceBlock name="absolute_footer" remove="true" />
+
+        <!--<referenceContainer name="cms_footer_links_container" remove="true" />-->
+        <!--<move element="schon.footer.cmspageslinks.container" destination="custom.footer" />-->
+        <!--Footer-->
+
+
+
+
+
+
+
+    </body>
+</page>
+
+

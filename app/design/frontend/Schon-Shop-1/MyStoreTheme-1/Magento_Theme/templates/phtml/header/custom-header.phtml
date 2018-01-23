@@ -1,0 +1,143 @@
+<!--<h2>Custom header</h2>-->
+
+<?php //include ($block->getTemplateFile('Magento_Theme::html/header.phtml')) ?>
+
+
+
+
+<nav class="navbar  navbar-default  main-navbar  text-myriad-pro-regular-14-upper  black-252528">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2">
+                <a class="image-wrapper  logo-link" href="/">
+                    <!-- <img class="image  image-logo" src="images/header/logo-color.png" alt="logo-color"> -->
+					<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('logo-color')->toHtml();?>
+                </a>
+                <button class="navbar-toggle  collapsed" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse  navbar-collapse" style="position: static;" id="bs-example-navbar-collapse-1">
+                <ul class="nav  navbar-nav   navbar-right  sub-menu">
+                    <!--Search-->
+                    <li class="dropdown  dropdown-search">
+	                    <?php echo $this->getChildHtml('topSearch'); ?>
+                    </li>
+                    <!--Search-->
+                    <li class="dropdown">
+	                    <?php echo $this->getChildHtml('minicart'); ?>
+                    </li>
+                    <li>
+                        <?php echo $this->getChildHtml('wish-list-link'); ?>
+                    </li>
+                    <li>
+	                    <?php echo $this->getChildHtml('authorization-link'); ?>
+                    </li>
+                </ul>
+                <div class="pull-right">
+	                <?php echo $this->getChildHtml('navigation.sections'); ?>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+
+<!--            <div id="headerDivAfterCollapseContainer"></div>-->
+
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+
+
+    <!--login-modal-->
+    <div class="modal  fade  login-modal" id="login-modal-window" tabindex="-1" role="dialog">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div>
+                    <ul class="nav  nav-tabs  nav-justified" role="tablist">
+                        <li role="presentation" class="active">
+                            <a class="text-montserrat-regular-18-upper  grey-757575" href="#sign-in" aria-controls="home" role="tab" data-toggle="tab">Sign in</a>
+                        </li>
+                        <li role="presentation">
+                            <a class="text-montserrat-regular-18-upper  grey-757575" href="#create-account" aria-controls="profile" role="tab" data-toggle="tab">Create new account</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content  login-modal__tab-content">
+                        <div role="tabpanel" class="tab-pane  login-modal__tab-pane active" id="sign-in">
+                            <div class="row">
+                                <div class="col-sm-8  col-sm-offset-2  col-xs-10  col-xs-offset-1">
+                                    <p class="login-modal__form-title  text-source-sans-pro-light-14  grey-757575">Welcome back! Sign in to Your Account</p>
+                                    <form class="sign-in-form  form-horizontal" id="sign-in-form-id">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control  forms-input  grey-f0f0f0-bg  text-source-sans-pro-light-14  placeholder-color-909090" id="sign-in-username" placeholder="Username or e-mail address">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control  forms-input  grey-f0f0f0-bg  text-source-sans-pro-light-14  placeholder-color-909090" id="sign-in-password" placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-xs-8">
+                                                    <div class="checkbox">
+                                                        <!--
+												<label   class="sign-in-form__label-checkbox  text-oxygen-regular-12  grey-9c9c9c">
+												  <input class="sign-in-form__checkbox" type="checkbox"> Remember me
+												</label>
+												-->
+                                                        <label class="sign-in-form__label-checkbox  schon-label  text-oxygen-regular-12  grey-9c9c9c  clearfix">
+                                                            <input class="schon-input" type="checkbox">
+                                                            <span class="sign-in-form__cr  cr">
+                                <i class="sign-in-form__cr-icon  cr-icon glyphicon-ok"></i>
+                              </span>
+                                                            Remember me
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-4  text-right">
+                                                    <p class="form-control-static">
+                                                        <a href="#" class="  text-oxygen-regular-12  grey-9c9c9c">Help?</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="schon-button  white-ffffff  black-282828-bg">Login</button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                                <!--col-lg-6-->
+                            </div>
+                            <!--row-->
+                        </div>
+                        <div role="tabpanel" class="tab-pane  login-modal__tab-pane" id="create-account">
+                            <div class="row">
+                                <div class="col-sm-8  col-sm-offset-2  col-xs-10  col-xs-offset-1">
+                                    <p class="login-modal__form-title  text-source-sans-pro-light-14  grey-757575">Create your very own account</p>
+                                    <form class="create-account-form  form-horizontal" id="sign-in-form-id">
+                                        <div class="form-group">
+                                            <input type="email tel" class="form-control  forms-input  grey-f0f0f0-bg  text-source-sans-pro-light-14  placeholder-color-909090" id="register-input" placeholder="Phone number or e-mail address">
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="schon-button  white-ffffff  black-282828-bg">Register</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!--col-lg-6-->
+                            </div>
+                            <!--row-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--login-modal-->
+
+
+</nav>
+
+
+
+
+
